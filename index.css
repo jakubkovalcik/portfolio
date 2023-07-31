@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*background-color: #ffffff;*/
+    color:rgb(0, 0, 0);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+u{
+    color: rgb(106, 0, 255);
+}
+i:hover{
+    color: rgb(106, 0, 255);
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.nav-bar {
+    /*height: 50px;*/
+    background: linear-gradient(to right, #fff, rgba(107, 1, 255, 0.471));
+    backdrop-filter: blur(10px);
+    color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    height: 50px;
+
+}
+.menu-items li {
+    padding: 10px;
+}
+
+.menu-btn {
+    border: 2px solid rgb(106, 0, 255);
+    border-radius: 999px;
+    background-color: inherit;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: linear;
+
+}
+.menu-btn:hover {
+    background: linear-gradient(to right, rgb(107, 1, 255), rgba(107, 1, 255, 0.471));
+}
+.hamburger { /*default - not shown*/
+    cursor: pointer;
+    border: none;
+    background-color: rgb(106, 0, 255);
+    font-size: 1.5em;
+    color: #ccc;
+    display: none;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .menu-items{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .projects-image img{
+        display: none;
+    }
+    .about-me-image{
+        display: none;
+    }
+    .about-me-image-secondary{
+        display: block;
+    }
+    .about-me-paragraph{
+        display: none;
+    }
+
+    .about-me-paragraph-secondary{
+        display: block;
+    }
+}
+
+/* konec headeru - navigace */
+
+/* Grid pro content */
+
+.grid-container {
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(6);
+    grid-template-columns: 1fr;
+    gap: 0rem; /
+}
+
+.grid-item {
+    padding: 0rem;
+    overflow: auto;
+}
+.grid-item:first-child{
+    min-height: 90vh;
+}
+
+.title-screen{
+    grid-row: 1;
+}
+
+.about-me {
+    grid-row: 2; 
+}
+
+.skills {
+    grid-row: 3;
+}
+
+.projects {
+    grid-row: 4;
+}
+
+.hobbies {
+    grid-row: 5;
+}
+
+.contacts {
+    grid-row: 6;
+}
+
+/*Grid - konec*/
+
+/*about me section*/
+
+.title-screen{
+    background-image: url("./img/coding-g5892f18eb_1920.jpg");
+    color:rgb(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.about-me-text{
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    font-size: 20px;
+    background: none;
+    font-size: 2em;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* ***Hello World animation*** */
+
+.letter {
+    opacity: 0;
+    background: none;
+}
+
+/* Optional animation styles for the typewriter effect */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        /*background: none;*/
+    }
+}
+
+.typewriter {
+    animation: fadeIn 2s linear forwards; /* Adjust the animation duration as needed */
+}
+
+/* ***konec hello world animace *** */
+
+/* ABOUT ME SECTION */ 
+
+.about-me-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px; /* Adjust the gap between the text and image */
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Left side with text */
+.about-me-paragraph {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    max-width: 350px;
+    min-width: 100px;
+    padding: 0px;
+    margin: 20px ;
+}
+h2{
+    font-size: 2em;
+}
+.about-me-paragraph p{
+    font-size: 1.5em;
+}
+.about-me-paragraph-secondary p{
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    color: rgb(0, 0, 0);
+    max-width: 200px;
+    min-width: 100px;
+    padding: 0px;
+    margin: 20px ;
+}
+
+/* Circular image with border on the right side */
+.about-me-image {
+    width: 200px; /* Adjust the width of the image */
+    height: 200px; /* Adjust the height of the image */
+    border-radius: 50%; /* Make it circular */
+    border: 5px solid #ffffff; /* Add a border around the image */
+    /* Replace the background image URL with your image */
+    background-image: url("./img/34D976CA-66C8-4AA7-9B11-A4002992E69B.jpeg");
+    background-size: cover;
+    background-position: top;
+    filter: grayscale(30%);
+    margin: 20px auto;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+/*.about-me-image-secondary{
+    width: 250px; /* Adjust the width of the image *
+    height: 250px; /* Adjust the height of the image *
+    border-radius: 50%; /* Make it circular *
+    border: 5px solid #ffffff; /* Add a border around the image */
+    /* Replace the background image URL with your image *
+    background-image: url("./img/34D976CA-66C8-4AA7-9B11-A4002992E69B.jpeg");
+    background-size: cover;
+    background-position: top;
+    margin: 10px 40px;
+}*/
+
+/* Hover effect: Scale up the image slightly */
+.about-me-image:hover {
+    transform: translateY(-5px);
+    filter: grayscale(10%)
+}
+
+/* SKILLS SECTION */
+
+.skills {
+    justify-content: center;
+    background-color: #fff;
+    color: #fff;
+}
+.skills h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.skills-flex-container-upper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+.skills-flex-container-lower{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px 10px;
+    border: 1px solid rgb(106, 0, 255);
+    border-radius: 15px;
+    margin: 15px;
+    position: relative;
+}
+.skills-flex-item {
+    padding: 10px;
+    background-color: inherit;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in;
+}
+.skills-flex-item img{
+    max-width: 85px;
+    height: auto;
+}
+.skills-flex-item:hover {
+    transform: translate(0, -3px);
+}
+
+.weby::before, .programming::before, .database::before {
+    position: absolute;
+    color: #ffffff;
+    top: -15px;
+    left: 10px;
+    background-color: rgb(106, 0, 255);
+    padding: 3px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+}
+.weby::before{
+    content: "<Web development />";
+}
+.programming::before{
+    content: "{Programming languages}";
+}
+.database::before{
+    content: "Databases";
+}
+
+
+/* PROJECTS SECTION */
+
+.projects{
+    background-color: #ffffff;
+    color: #f1f1f1;
+}
+.projects h2{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 20px 0px;
+    margin: 0px auto;
+}
+.projects-flex-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use grid auto-fit to wrap the items */
+    gap: 20px; /* Adjust the gap between the projects */
+    margin: 20px 20px 40px 20px;
+}
+
+.projects-grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Only one column for better control */
+    grid-template-rows: auto auto auto auto auto; /* Adjust the number of rows */
+    margin: 10px;
+    border: 2px solid rgb(19, 11, 11);
+    border-radius: 20px;
+    overflow: hidden; /* Hide any content that overflows the container */
+    max-height: 90vh;
+}
+
+.projects-image {
+    grid-row: 1; /* Place the image in the first row */
+    grid-column: 1 ;
+    text-align: center; /* Center the image */
+    margin: 10px; /* Add a margin at the bottom of the image */
+}
+
+.projects-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.projects-headline {
+    grid-row: 2; /* Place the headline in the second row */
+    grid-column: 1 ;
+    padding: 10px;
+}
+
+
+.projects-info {
+    grid-row: 3; 
+    grid-column: 1 ;
+    padding: 5px 15px;
+}
+
+.projects-technologies {
+    grid-row: 4; 
+    grid-column: 1;
+    padding: 5px 15px;
+}
+
+.polygon-text {
+    width: 70px; 
+    shape-outside: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    display: inline-block;
+    background-color: rgb(106, 0, 255);
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+}
+.projects-links{
+    grid-row: 5;
+    grid-column: 1;
+    display: inline-block;
+    justify-content: left;
+    align-items: center;
+
+}
+.projects-links img{
+    display: inline-block;
+    max-height: 40px;
+    padding-right: 5px;
+    padding: 10px;
+}
+
+
+
+/* HOBBIES SECTION - WORK IN PROGRESS */
+.hobbies{
+    background-color: #fff;
+}
+.hobbies h2{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.hobbies-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+    padding: 20px;
+    min-width: 100px;
+}
+.hobbies-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:none;
+    background: linear-gradient(to right, #fff, #b84ff0c5 );
+    margin: 20px;
+    box-shadow: black 0px 0px 10px;
+}
+.hobbies-item img{
+    height: auto;
+    max-width: 250px;
+}
+.hobbies-item h3{
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+
+/* CONTACT SECTION */
+
+
+.contacts h2{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #f1f1f1;
+}
+.contacts-form-container{
+    display: inline-block;
+    align-items: left;
+    justify-content: left;
+    margin-left: 50px;
+}
+fieldset{
+    border: none;
+}
+label{
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+}
+.contacts-flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: 70px;
+
+}
+.contacts-flex-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 13px;
+}
+.contacts-flex-item img{
+    max-width: 50px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: transform 0.2s ease-in;
+}
+.contacts-flex-item img:hover{
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+.contacts-flex-item p{
+    color: #f1f1f1;
+    font-size: 0.9em;
+}
+.zmena-barvy {
+    background-color: rgb(106, 0, 255);
+}
+
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(106, 0, 255);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.75em;
+}
